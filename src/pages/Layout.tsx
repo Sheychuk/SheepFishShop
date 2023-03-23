@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 const theme = createTheme()
@@ -26,8 +26,8 @@ export default function Layout(props: PropsWithChildren) {
       </AppBar>
       <nav style={{ padding: 20 }}>
         <Stack direction='row' spacing={2}>
-          <Link to='/'>Home</Link>
-          <Link to='/products'>Products</Link>
+          <NavLink to='/'>Home</NavLink>
+          <NavLink to='/products'>Products</NavLink>
         </Stack>
       </nav>
       <main>

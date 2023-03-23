@@ -6,6 +6,7 @@ export const productListApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://dummyjson.com',
   }),
+  refetchOnMountOrArgChange: true,
   endpoints: (build) => ({
     fetchProductsList: build.query<{ products: Product[] }, number>({
       query: (limit = 9) => ({

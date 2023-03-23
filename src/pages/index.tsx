@@ -1,12 +1,14 @@
 import { Routes, Route } from 'react-router'
 import { lazy } from 'react'
 
-const ProductsListPage = lazy(() => import('./home'))
+const HomePage = lazy(() => import('./home'))
+const ProductsListPage = lazy(() => import('./product-list'))
 
 export const Routing = () => {
   return (
     <Routes>
-      <Route path='/' element={<ProductsListPage />} />
+      <Route path='/' element={<HomePage />} />
+      <Route path='/products' element={<ProductsListPage />} />
       {/* <Route path='/:taskId' element={<ProductDetailsPage />} />*/}
     </Routes>
   )

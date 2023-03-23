@@ -1,7 +1,7 @@
 import React from 'react'
 import { ProductCard, productListApi } from 'entities/product'
 import { Grid } from '@mui/material'
-import { AddToCart } from '../../../features/add-to-orders-cart'
+import { AddToCart } from 'features/add-to-orders-cart'
 
 const ProductsList = () => {
   const { data, isLoading, error } = productListApi.useFetchProductsListQuery(9)

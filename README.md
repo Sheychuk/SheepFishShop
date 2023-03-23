@@ -1,4 +1,4 @@
-# Shop
+# SheepFishShop
 
 This project was bootstrapped with [Vite](https://vitejs.dev/).\
 Functionality: addition and removing items from the cart
@@ -30,7 +30,7 @@ FSD architecture
 
 ## Folder Structure
 
-The application is structured using the FSD (Feature-Structured Directory) architecture. The `src` directory is organized into the following folders:\
+The application is structured using the FSD (Feature-Structured Directory) architecture. The `src` directory is organized into the following folders:
 
 shared — reusable functionality, detached from the specifics of the project/business.(e.g. UIKit, libs, API)\
 entities — business entities.(e.g., User, Product, Order)\
@@ -38,4 +38,4 @@ features — user interactions, actions that bring business value to the user.(e
 widgets — compositional layer to combine entities and features into meaningful blocks.(e.g. IssuesList, UserProfile)\
 pages — compositional layer to construct full pages from entities, features and widgets.\
 processes — complex inter-page scenarios. (e.g., authentication)\
-app — app-wide settings, styles and providers.\
+app — app-wide settings, styles and providers.

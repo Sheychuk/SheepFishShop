@@ -6,7 +6,8 @@ export const productListApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://dummyjson.com',
   }),
-  refetchOnMountOrArgChange: true,
+  tagTypes: ['Products'],
+  // refetchOnMountOrArgChange: true,
   endpoints: (build) => ({
     fetchProductsList: build.query<{ products: Product[] }, number>({
       query: (limit = 9) => ({
@@ -15,6 +16,18 @@ export const productListApi = createApi({
           limit,
         },
       }),
+    }),
+    addProduct: build.mutation<Product, Partial<Product>>({
+      query(body) {
+        return {
+          url: '/products/add',
+          method: 'POST',
+          body,
+        }
+      },
+      // Invalidates all Product-type queries providing the `LIST` id - after all, depending of the sort order,
+      // that newly created post could show up in any lists.
+      invalidatesTags: [{ type: 'Products', id: 'LIST' }],
     }),
   }),
 })

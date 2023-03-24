@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 
 const Catalog = () => {
-  const { data, isLoading, error } = productListApi.useFetchProductsListQuery(9)
+  const { data, isLoading, error } = productListApi.useFetchProductsListQuery(20)
 
   if (isLoading) {
     return <b>Loading...</b>

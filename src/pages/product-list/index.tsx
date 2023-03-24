@@ -2,7 +2,7 @@ import React from 'react'
 import { OrdersCart } from 'widgets/orders-cart'
 import { ProductsList } from 'widgets/products-list'
 import { Grid } from '@mui/material'
-import Layout from '../Layout'
+import Layout from '../../shared/ui/Layout'
 
 const ListPage = () => {
   return (

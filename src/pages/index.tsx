@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router'
 import { lazy } from 'react'
 
-const HomePage = lazy(() => import('./home'))
-const ProductsListPage = lazy(() => import('./product-list'))
+const HomePage = lazy(() => import('pages/home'))
+const ProductsListPage = lazy(() => import('pages/product-list'))
 
 export const Routing = () => {
   return (

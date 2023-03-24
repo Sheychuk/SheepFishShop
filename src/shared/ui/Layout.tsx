@@ -9,8 +9,8 @@ export default function Layout(props: PropsWithChildren) {
     <>
       <nav style={{ padding: 20 }}>
         <Stack direction='row' spacing={2}>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/products'>Products</NavLink>
+          <NavLink to='/sheepfish'>Home</NavLink>
+          <NavLink to='/sheepfish/products'>Products</NavLink>
         </Stack>
       </nav>
       <main>

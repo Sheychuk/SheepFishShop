@@ -4,7 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '',
+  base: '/sheepfish/',
   plugins: [react()],
   resolve: {
     alias: {

@@ -4,7 +4,7 @@ import { Grid } from '@mui/material'
 import { AddToCart } from 'features/add-to-orders-cart'
 
 const ProductsList = () => {
-  const { data, isLoading, error } = productListApi.useFetchProductsListQuery(9)
+  const { data, isLoading, error } = productListApi.useFetchProductsListQuery(20)
 
   return (
     <>

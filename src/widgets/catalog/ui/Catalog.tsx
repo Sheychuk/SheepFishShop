@@ -10,6 +10,7 @@ import {
   TableHead,
   TableRow
 } from '@mui/material';
+import {DeleteProduct} from '../../../features/delete-product';
 
 const Catalog = () => {
   const { data, isLoading, error } = productListApi.useFetchProductsListQuery(20)
@@ -34,6 +35,7 @@ const Catalog = () => {
             <TableCell>Rating</TableCell>
             <TableCell>Stock</TableCell>
             <TableCell>Category</TableCell>
+            <TableCell />
           </TableRow>
         </TableHead>
         <TableBody>
@@ -56,6 +58,9 @@ const Catalog = () => {
               <TableCell>{item.rating}</TableCell>
               <TableCell>{item.stock}</TableCell>
               <TableCell>{item.category}</TableCell>
+              <TableCell>
+                <DeleteProduct id={item.id} />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

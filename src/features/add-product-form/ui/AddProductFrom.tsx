@@ -3,10 +3,11 @@ import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Button, Grid, TextField } from '@mui/material'
 import { productListApi } from 'entities/product'
-import {useAlert} from '../../../shared/providers/AlertProvider';
+import { useAlert } from '../../../shared/providers/AlertProvider'
 
 const validationSchema = yup.object({
   title: yup.string().required('Title is required'),
+  description: yup.string(),
   price: yup.number().required('Price is required'),
 })
 
@@ -16,7 +17,7 @@ type AddProductFormProps = {
 
 export const AddProductForm = (props: AddProductFormProps) => {
   const [addProduct, { isLoading }] = productListApi.useAddProductMutation()
-  const alert = useAlert();
+  const alert = useAlert()
 
   const formik = useFormik({
     initialValues: {
@@ -26,11 +27,10 @@ export const AddProductForm = (props: AddProductFormProps) => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      addProduct(values)
-          .then(() => {
-            alert({type: 'success', message: 'Product added successfully'})
-            props.onSubmitSuccess()
-          })
+      addProduct(values).then(() => {
+        alert({ type: 'success', message: 'Product added successfully' })
+        props.onSubmitSuccess()
+      })
     },
   })
 
